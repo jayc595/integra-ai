@@ -1,5 +1,6 @@
 import React from 'react'
 import SignUpFormProvider from './components/form-provider'
+import RegistrationFormStep from './components/registration-step'
 
 type Props = {}
 
@@ -7,7 +8,11 @@ const SignUp = (props: Props) => {
   return (
     <div className='flex-1 py-36 md:px-16 w-full'>
         <div className='flex flex-col h-full gap-3'>
-            <SignUpFormProvider></SignUpFormProvider>
+            <SignUpFormProvider>
+              <div className='flex flex-col gap-3'>
+                <RegistrationFormStep></RegistrationFormStep>
+              </div>
+            </SignUpFormProvider>
         </div>
     </div>
   )
