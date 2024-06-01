@@ -62,7 +62,7 @@ const UserTypeCard = ({
                 <div>
                     <div className={cn(
                         'w-4 h-4 rounded-full',
-                        userType == value ? 'bg-primaryBlue' : 'bg-platinum'
+                        userType == value ? 'bg-secondaryBlue' : 'bg-transparent'
                     )}>
                         <Input
                             {...register('type', {
