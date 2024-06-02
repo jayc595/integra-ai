@@ -10,15 +10,20 @@ import { Spinner } from '@/components/ui/loader/spinner';
 //the below ensures we only load it when needed - i.e helps performance.
 const DetailForm = dynamic(() => import('./account-details'), {
     ssr: false,
-    loading: Spinner,
-  })
+    loading: () => <Spinner />,
+})
+
+const OTPForm = dynamic(() => import('./otp-form'), {
+    ssr: false,
+    loading: () => <Spinner />,
+})
 
 type Props = {}
 
 const RegistrationFormStep = (props: Props) => {
     const {
         register,
-        formState: { errors }, 
+        formState: { errors },
         setValue
     } = useFormContext()
     const { currentStep } = useAuthContextHook();
@@ -26,9 +31,9 @@ const RegistrationFormStep = (props: Props) => {
     const [onUserType, setOnUserType] = useState<'owner' | 'personal'>('owner')
     setValue('otp', onOtp)
 
-    switch(currentStep){
+    switch (currentStep) {
         case 1:
-            return(
+            return (
                 <TypeSelectionForm
                     register={register}
                     userType={onUserType}
@@ -36,17 +41,17 @@ const RegistrationFormStep = (props: Props) => {
                 />
             )
         case 2:
-            return(
-                <DetailForm errors={errors} register={register}/>
+            return (
+                <DetailForm errors={errors} register={register} />
             )
         case 3:
-            return(
-                <OTPForm onOtp={onOtp} setOnOtp={setOnOtp}/>
+            return (
+                <OTPForm onOtp={onOtp} setOtp={setOnOtp} />
             )
     }
-  return (
-    <div>RegistrationFormStep</div>
-  )
+    return (
+        <div>RegistrationFormStep</div>
+    )
 }
 
 export default RegistrationFormStep
