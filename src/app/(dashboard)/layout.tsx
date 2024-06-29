@@ -72,7 +72,7 @@ const DashboardLayout = ({
       <ResizableHandle withHandle />
       <ResizablePanel defaultSize={85}>
         <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
+          {children}
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>
