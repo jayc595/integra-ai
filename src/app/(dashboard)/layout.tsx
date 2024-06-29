@@ -27,9 +27,9 @@ const DashboardLayout = ({
       className="h-full border"
     >
       <ResizablePanel 
-        defaultSize={15} 
-        minSize={15} 
-        maxSize={20} 
+        defaultSize={10} 
+        minSize={10} 
+        maxSize={15} 
         collapsible={true}
         onCollapse={() => {
           setIsCollapsed(true)
@@ -50,7 +50,22 @@ const DashboardLayout = ({
               isCollapsed ? "h-[52px]" : "px-2"
             )}
           >
-            <BotSwitcher isCollapsed={isCollapsed}/>
+            <BotSwitcher 
+              isCollapsed={isCollapsed} 
+              bots={[
+                {
+                  label: 'Test Bot',
+                  icon: (
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <title>Vercel</title>
+                      <path d="M24 22.525H0l12-21.05 12 21.05z" fill="currentColor" />
+                    </svg>
+                  )
+
+                }
+              ]}
+            
+            />
         </div>
           <Separator />
           <Nav

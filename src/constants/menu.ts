@@ -1,5 +1,5 @@
 import { ConversationsIcon } from "@/icons/conversations-icon";
-import { Blocks, BlocksIcon, CodeXml, Home, Icon, Inbox, LogOut, LucideIcon, MessageCircleMore, Plus, Presentation, Settings } from "lucide-react";
+import { Blocks, BlocksIcon, CodeXml, Home, Icon, Inbox, LogOut, LucideIcon, MessageCircleMore, Plus, Presentation, Settings, SettingsIcon } from "lucide-react";
 
 type SIDE_MENU_PROPS = {
     title: string
@@ -14,6 +14,16 @@ export const TOP_SIDE_MENU: SIDE_MENU_PROPS[] = [
         label: '128',
         icon: Inbox,
         variant: 'default'
+    },
+    {
+        title: 'Integrations',
+        icon: BlocksIcon,
+        variant: 'ghost'
+    },
+    {
+        title: 'Settings',
+        icon: SettingsIcon,
+        variant: 'ghost'
     }
 ]
 
